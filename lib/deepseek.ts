@@ -36,6 +36,16 @@ export async function twistWish(wish: string, mood: ConcreteMood): Promise<strin
     // @ts-expect-error DeepSeek-specific parameter, passed through as-is.
     thinking: { type: "disabled" },
   });
+  const u = res.usage as
+    | (NonNullable<typeof res.usage> & { prompt_cache_hit_tokens?: number })
+    | undefined;
+  if (u) {
+    // One line per twist in the server logs, to keep an eye on cost.
+    console.log(
+      `deepseek usage (model ${MODEL}): in ${u.prompt_tokens} (cached ${u.prompt_cache_hit_tokens ?? 0}), ` +
+        `out ${u.completion_tokens} (reasoning ${u.completion_tokens_details?.reasoning_tokens ?? 0}), total ${u.total_tokens}`,
+    );
+  }
   const choice = res.choices[0];
   const text = cleanTwist(choice?.message?.content ?? "");
   if (!text) throw new Error(`empty completion (finish_reason: ${choice?.finish_reason ?? "none"})`);

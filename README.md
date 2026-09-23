@@ -14,7 +14,7 @@ Built with Next.js (App Router) on Vercel, DeepSeek for the twists, and a write-
 - **Self-harm safety.** These wishes are caught by a server-side check before the model is called. The genie refuses in character and points to Umang (0311-7786264) and findahelpline.com.
 - **Share.** Copy the text, or share a link (`/t?d=…`, no database) that has its own preview card (`/api/og`).
 - **History.** The last 20 wishes are kept in the browser (localStorage only).
-- **Rate limiting.** 10 per minute and 100 per day per IP (Upstash in production, in-memory in dev).
+- **3 wishes a day.** Each browser gets 3 wishes per rolling 24 hours, tracked by an anonymous cookie. A 30-per-day per-IP cap stops cookie-clearing abuse without punishing people on shared mobile IPs. Only granted wishes count; rejected, failed and self-harm wishes don't. The page shows the wishes left and when the next one frees up. Uses Upstash in production and memory in dev.
 - **Wish log.** Every wish is inserted into Supabase. The site never reads it back.
 
 ## Run locally
@@ -33,7 +33,7 @@ With no `DEEPSEEK_API_KEY` the API returns canned twists, so you can work on the
 2. Add the environment variables from `.env.example`:
    - `DEEPSEEK_API_KEY` (required)
    - `SUPABASE_URL`, `SUPABASE_ANON_KEY` (the wish log)
-   - `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` (recommended: the in-memory limiter isn't shared between serverless instances)
+   - `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` (strongly recommended: without Upstash the 3-a-day limit is only per server instance, so people could get more)
 3. Deploy.
 
 ### Supabase (write-only wish log)

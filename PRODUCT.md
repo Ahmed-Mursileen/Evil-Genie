@@ -34,7 +34,7 @@ The genie is not a jokester. It is an ancient eldritch being, and the twists are
 - Moods: Classic Evil (default), Petty, Overly Literal, Chaotic, The King in Yellow (pure cosmic horror), Surprise me.
 - Local wish history (in the browser only), copy and share, a shareable link with a preview image.
 - Every wish is logged to Supabase (write-only; the site never reads it back).
-- Per-IP rate limiting.
+- 3 wishes per person per rolling 24 hours (anonymous cookie), with a 30-per-day per-IP cap. Only granted wishes count.
 - Self-harm wishes are never granted. The genie refuses in character and points to a crisis line (Umang Pakistan 0311-7786264, findahelpline.com).
 - No racism, slurs or punching down, in any mood.
 

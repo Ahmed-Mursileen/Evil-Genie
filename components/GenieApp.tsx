@@ -8,6 +8,9 @@ import { Twist } from "./Twist";
 import { Wall } from "./Wall";
 
 type Result = { wish: string; twist: string; mood: string; safety?: boolean; at: number };
+type Quota = { remaining: number; resetAt: number | null };
+
+const WISHES_PER_DAY = 3;
 
 const HISTORY_KEY = "evil-genie:history";
 const HISTORY_MAX = 20;
@@ -37,6 +40,16 @@ function writeHistory(items: Result[]) {
   }
 }
 
+function untilText(resetAt: number | null, now: number): string {
+  if (!resetAt) return "Agli murad jald.";
+  const mins = Math.max(0, Math.ceil((resetAt - now) / 60_000));
+  if (mins < 1) return "Agli murad bas aane wali hai.";
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  const parts = [h ? `${h} ghante` : "", m ? `${m} minute` : ""].filter(Boolean).join(" ");
+  return `Agli murad ${parts} mein.`;
+}
+
 function shareLink(r: Result) {
   return `${location.origin}/t?d=${encodeShare(r)}`;
 }
@@ -55,6 +68,8 @@ export function GenieApp() {
   const [result, setResult] = useState<Result | null>(null);
   const [history, setHistory] = useState<Result[]>([]);
   const [notice, setNotice] = useState("");
+  const [quota, setQuota] = useState<Quota | null>(null);
+  const [now, setNow] = useState(0);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const verdictRef = useRef<HTMLHeadingElement>(null);
 
@@ -63,6 +78,32 @@ export function GenieApp() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setHistory(readHistory());
   }, []);
+
+  useEffect(() => {
+    fetch("/api/twist", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((q) => q && setQuota({ remaining: q.remaining, resetAt: q.resetAt }))
+      .catch(() => {});
+  }, []);
+
+  const exhausted = quota?.remaining === 0;
+
+  useEffect(() => {
+    if (!exhausted) return;
+    const tick = () => setNow(Date.now());
+    tick();
+    const id = setInterval(tick, 30_000);
+    return () => clearInterval(id);
+  }, [exhausted]);
+
+  // A rolling window: once the oldest wish ages out, ask the server again.
+  useEffect(() => {
+    if (!exhausted || !quota?.resetAt || now < quota.resetAt) return;
+    fetch("/api/twist", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((q) => q && setQuota({ remaining: q.remaining, resetAt: q.resetAt }))
+      .catch(() => {});
+  }, [exhausted, now, quota?.resetAt]);
 
   useEffect(() => {
     if (!loading) return;
@@ -85,7 +126,7 @@ export function GenieApp() {
 
   async function summon(e?: FormEvent) {
     e?.preventDefault();
-    if (loading) return;
+    if (loading || exhausted) return;
     if (trimmed.length < WISH_MIN) {
       setError("Kuch toh likho, faani. The wall cannot grant silence.");
       inputRef.current?.focus();
@@ -106,6 +147,7 @@ export function GenieApp() {
         body: JSON.stringify({ wish: trimmed, mood }),
       });
       const data = await res.json().catch(() => ({}));
+      if (typeof data.remaining === "number") setQuota({ remaining: data.remaining, resetAt: data.resetAt ?? null });
       if (!res.ok || typeof data.twist !== "string") {
         setError(data.error ?? "Woh so gaya. Something older than time is not answering. Try again.");
         return;
@@ -225,11 +267,35 @@ export function GenieApp() {
           <p className="mood-hint">{selected.hint}</p>
         </fieldset>
 
-        <button type="submit" className="summon" disabled={loading}>
-          {loading ? "Jaag raha hai…" : "Murad maango"}
+        {quota && (
+          <div
+            className="quota"
+            role="img"
+            aria-label={`${quota.remaining} of ${WISHES_PER_DAY} wishes left today`}
+          >
+            <span className="quota-label" aria-hidden="true">
+              Aaj ki muradein
+            </span>
+            <span className="quota-marks" aria-hidden="true">
+              {Array.from({ length: WISHES_PER_DAY }, (_, i) => (
+                <span key={i} className={i < quota.remaining ? "mark" : "mark used"} />
+              ))}
+            </span>
+            <span className="quota-count" aria-hidden="true">
+              {quota.remaining} baaqi
+            </span>
+          </div>
+        )}
+
+        <button type="submit" className="summon" disabled={loading || exhausted}>
+          {loading ? "Jaag raha hai…" : exhausted ? "Muradein khatam" : "Murad maango"}
         </button>
         <p className={`status${error ? " error" : ""}`} role="status" aria-live="polite">
-          {loading ? WAKING_LINES[lineIdx] : error}
+          {loading
+            ? WAKING_LINES[lineIdx]
+            : exhausted
+              ? `${error || "Aaj ki teen muradein poori ho gayin. The wall sleeps now."} ${untilText(quota.resetAt, now)}`
+              : error}
         </p>
       </form>
 

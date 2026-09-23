@@ -1,0 +1,748 @@
+@import "tailwindcss";
+
+/* ── The wall ─────────────────────────────────────────────── */
+:root {
+  --wall: #15101d;
+  --wall-hi: #231a2f;
+  --crack: #08060c;
+  --gold: #f2b632;
+  --gold-deep: #9a6108;
+  --violet: #a472ff;
+  --violet-deep: #4a2396;
+  --bone: #efe6d8;
+  --bone-dim: #b8abc9;
+  --ink: #1b1024;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Brush coverage: blotchy thin patches where the plaster shows through. */
+  --brush: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='240' preserveAspectRatio='none'%3E%3Cfilter id='p' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.02' numOctaves='4' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.6 0 0 0 1.85'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+  --brush-soft: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='240' preserveAspectRatio='none'%3E%3Cfilter id='q' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.02' numOctaves='4' seed='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 1.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23q)'/%3E%3C/svg%3E");
+  /* Washed-off chalk: faded in soft blotches. */
+  --washed: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='200' preserveAspectRatio='none'%3E%3Cfilter id='w' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='4' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 -1.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");
+  /* Damp stains and blotches on the plaster. */
+  --stains: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1600' preserveAspectRatio='none'%3E%3Cfilter id='s' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0025' numOctaves='4' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3.2 0 0 0 -1.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+  /* Paint drips of uneven length; one 1200px strip, not a repeating tile. */
+  --drips: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='44'%3E%3Cg fill='%23000'%3E%3Cpath d='M38 0h9l-1.8 17a2.7 2.7 0 0 1-5.4 0z'/%3E%3Cpath d='M121 0h6l-1.2 9a1.8 1.8 0 0 1-3.6 0z'/%3E%3Cpath d='M233 0h11l-2.2 31a3.3 3.3 0 0 1-6.6 0z'/%3E%3Cpath d='M318 0h5l-1.0 12a1.5 1.5 0 0 1-3.0 0z'/%3E%3Cpath d='M377 0h7l-1.4 6a2.1 2.1 0 0 1-4.2 0z'/%3E%3Cpath d='M502 0h8l-1.6 22a2.4 2.4 0 0 1-4.8 0z'/%3E%3Cpath d='M611 0h5l-1.0 8a1.5 1.5 0 0 1-3.0 0z'/%3E%3Cpath d='M705 0h12l-2.4 38a3.6 3.6 0 0 1-7.2 0z'/%3E%3Cpath d='M812 0h6l-1.2 14a1.8 1.8 0 0 1-3.6 0z'/%3E%3Cpath d='M903 0h9l-1.8 19a2.7 2.7 0 0 1-5.4 0z'/%3E%3Cpath d='M1011 0h5l-1.0 7a1.5 1.5 0 0 1-3.0 0z'/%3E%3Cpath d='M1104 0h10l-2.0 27a3.0 3.0 0 0 1-6.0 0z'/%3E%3C/g%3E%3C/svg%3E");
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* The King in Yellow repaints the wall. */
+[data-mood="yellow"] {
+  --wall: #0d0c07;
+  --wall-hi: #1c190b;
+  --crack: #000;
+  --gold: #f4e27a;
+  --gold-deep: #6b5a06;
+  --violet: #e3c62b;
+  --violet-deep: #3d3304;
+  --bone: #efe8c4;
+  --bone-dim: #b9ae76;
+  --ink: #141203;
+}
+
+html {
+  background: var(--crack);
+  scrollbar-color: var(--violet-deep) var(--crack);
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  color: var(--bone);
+  font-family: var(--font-painted), "Arial Narrow", sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.wall {
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  overflow: hidden;
+  background-color: var(--wall);
+  background-image:
+    var(--noise),
+    radial-gradient(60% 40% at 18% 12%, var(--wall-hi), transparent 70%),
+    radial-gradient(45% 35% at 88% 55%, var(--wall-hi), transparent 70%),
+    radial-gradient(70% 50% at 40% 100%, var(--crack), transparent 70%);
+  transition: background-color 900ms var(--ease-out);
+}
+
+.wall::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: var(--crack);
+  opacity: 0.55;
+  -webkit-mask-image: var(--stains);
+  mask-image: var(--stains);
+  -webkit-mask-size: 1600px 1600px;
+  mask-size: 1600px 1600px;
+  pointer-events: none;
+}
+
+.crack {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.crack .gap {
+  fill: var(--crack);
+}
+
+.crack .chip {
+  fill: none;
+  stroke: var(--wall-hi);
+  stroke-width: 1;
+}
+
+.ghosts {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ghosts span {
+  position: absolute;
+  white-space: nowrap;
+  font-family: var(--font-spray), sans-serif;
+  font-size: clamp(2.4rem, 9vw, 6.5rem);
+  line-height: 1;
+  color: var(--bone);
+  opacity: 0.07;
+  -webkit-mask-image: var(--washed);
+  mask-image: var(--washed);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.ghosts span:nth-child(even) {
+  color: var(--violet);
+  opacity: 0.08;
+}
+
+.wall-inner {
+  width: min(100% - 32px, 40rem);
+  margin-inline: auto;
+  padding-block: clamp(20px, 5vh, 56px) 40px;
+}
+
+/* ── Lettering ───────────────────────────────────────────── */
+.urdu {
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 2.2;
+  color: var(--gold);
+  direction: rtl;
+  margin: 0;
+  text-shadow: 0 0 10px color-mix(in oklab, var(--gold) 35%, transparent);
+}
+
+.title-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.35em;
+  margin-top: -0.4rem;
+}
+
+.title {
+  font-family: var(--font-spray), var(--font-painted), sans-serif;
+  font-weight: 400;
+  font-size: clamp(3.4rem, 17vw, 6rem);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  color: var(--violet);
+  margin: 0;
+  /* Sign-painter's drop shade, not a UI shadow. */
+  text-shadow:
+    0.045em 0.05em 0 var(--gold-deep),
+    0 0 0.18em color-mix(in oklab, var(--violet) 45%, transparent),
+    0 0 0.6em color-mix(in oklab, var(--violet) 22%, transparent);
+  text-wrap: balance;
+}
+
+.tagline {
+  margin: 0.9rem 0 0;
+  font-size: clamp(1.15rem, 4.6vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--bone);
+}
+
+.tagline em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+/* ── Wish panel (whitewash painted on the wall) ──────────── */
+.panel {
+  position: relative;
+  margin-top: 1.6rem;
+}
+
+.whitewash {
+  position: absolute;
+  inset: 0;
+  background: var(--bone);
+  filter: url(#rough);
+  -webkit-mask-image: var(--brush-soft);
+  mask-image: var(--brush-soft);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  z-index: -1;
+  transition: background-color 900ms var(--ease-out);
+}
+
+.wish-label {
+  display: block;
+  padding: 0.8rem 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--violet-deep);
+}
+
+.wish-input {
+  display: block;
+  width: 100%;
+  min-height: 5.6rem;
+  resize: none;
+  border: 0;
+  background: transparent;
+  padding: 0.25rem 1rem 0.2rem;
+  font: inherit;
+  font-size: clamp(1.35rem, 5.4vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+  caret-color: var(--violet-deep);
+}
+
+.wish-input::placeholder {
+  color: color-mix(in oklab, var(--ink) 55%, var(--bone));
+}
+
+.wish-input:focus-visible {
+  outline: none;
+}
+
+.panel:focus-within .whitewash {
+  background: color-mix(in oklab, var(--bone) 92%, var(--gold));
+}
+
+.wish-meta {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: color-mix(in oklab, var(--ink) 70%, var(--bone));
+  font-variant-numeric: tabular-nums;
+}
+
+.wish-meta .over {
+  color: var(--violet-deep);
+  font-weight: 700;
+}
+
+/* ── Moods (chalk labels) ────────────────────────────────── */
+.moods {
+  border: 0;
+  margin: 1.4rem 0 0;
+  padding: 0;
+}
+
+.moods legend {
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--bone-dim);
+}
+
+.mood-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.mood {
+  position: relative;
+  cursor: pointer;
+}
+
+.mood input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mood span {
+  position: relative;
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bone);
+  transition: color 200ms var(--ease-out);
+}
+
+.mood span::before {
+  content: "";
+  position: absolute;
+  left: 0.45rem;
+  right: 0.45rem;
+  bottom: 0.2rem;
+  height: 2px;
+  background: var(--bone-dim);
+  opacity: 0.45;
+  filter: url(#rough-sm);
+}
+
+.mood input:checked + span::before {
+  opacity: 0;
+}
+
+.mood span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--violet);
+  filter: url(#rough);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 350ms var(--ease-out);
+}
+
+.mood:hover span {
+  color: var(--gold);
+}
+
+.mood input:checked + span {
+  color: var(--ink);
+}
+
+.mood input:checked + span::after {
+  transform: scaleX(1);
+}
+
+.mood input:focus-visible + span {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.mood-hint {
+  min-height: 1.5em;
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  color: var(--bone-dim);
+}
+
+/* ── The painted button ──────────────────────────────────── */
+.summon {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: 100%;
+  margin-top: 1.4rem;
+  padding: 0.95rem 1rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: clamp(1.5rem, 6vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.summon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gold);
+  filter: url(#rough);
+  -webkit-mask-image: var(--brush);
+  mask-image: var(--brush);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  transition: transform 250ms var(--ease-out), background-color 250ms;
+}
+
+.summon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 2px);
+  height: 44px;
+  z-index: -1;
+  background: var(--gold);
+  -webkit-mask-image: var(--drips);
+  mask-image: var(--drips);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 1200px 44px;
+  mask-size: 1200px 44px;
+  pointer-events: none;
+}
+
+.summon:disabled::after {
+  background: color-mix(in oklab, var(--gold) 55%, var(--wall));
+}
+
+.summon:hover::before {
+  transform: scale(1.015, 1.06);
+}
+
+.summon:active::before {
+  transform: scale(0.99);
+}
+
+.summon:disabled {
+  cursor: progress;
+}
+
+.summon:disabled::before {
+  background: color-mix(in oklab, var(--gold) 55%, var(--wall));
+}
+
+.status {
+  min-height: 1.6em;
+  margin: 1.6rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bone-dim);
+}
+
+.status.error {
+  color: var(--gold);
+}
+
+/* ── Lamp ─────────────────────────────────────────────────── */
+.lamp {
+  flex: none;
+  width: clamp(72px, 20vw, 104px);
+  height: auto;
+  margin-bottom: 0.2rem;
+  overflow: visible;
+  color: var(--gold);
+}
+
+.lamp-body {
+  transform-origin: 50% 85%;
+}
+
+.lamp .smoke path {
+  opacity: 0;
+}
+
+.lamp[data-waking="true"] .lamp-body {
+  animation: rattle 180ms steps(2) infinite;
+}
+
+.lamp[data-waking="true"] .smoke path {
+  animation: smoke 1.8s var(--ease-out) infinite;
+}
+
+.lamp[data-waking="true"] .smoke path:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.lamp[data-waking="true"] .smoke path:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes rattle {
+  0% { transform: rotate(-4deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-1px); }
+  100% { transform: rotate(-2deg) translateY(1px); }
+}
+
+@keyframes smoke {
+  0% { opacity: 0; transform: translateY(6px) scale(0.8); }
+  25% { opacity: 0.85; }
+  100% { opacity: 0; transform: translateY(-28px) scale(1.4); }
+}
+
+/* ── The twist, sprayed onto the wall ────────────────────── */
+.verdict {
+  margin-top: 2.6rem;
+}
+
+.verdict-wish {
+  margin: 0.9rem 0 0;
+  max-width: 40ch;
+  font-size: 1.1rem;
+  color: var(--bone-dim);
+}
+
+.verdict-wish .nowrap {
+  white-space: nowrap;
+}
+
+.verdict-wish q {
+  color: var(--bone);
+}
+
+.stamp {
+  display: inline-block;
+  margin: 0 0 0.35rem;
+  font-family: var(--font-spray), sans-serif;
+  font-size: clamp(2.2rem, 10vw, 3.2rem);
+  line-height: 1;
+  color: var(--gold);
+  transform: rotate(-3deg);
+  text-shadow: 0 0 0.3em color-mix(in oklab, var(--gold) 30%, transparent);
+}
+
+.twist {
+  margin: 0;
+  max-width: 30ch;
+  text-shadow: 0 0 0.5em color-mix(in oklab, var(--bone) 16%, transparent);
+  font-size: clamp(1.55rem, 6.2vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.16;
+  color: var(--bone);
+  text-wrap: pretty;
+}
+
+.twist.safety {
+  color: var(--gold);
+}
+
+.spray {
+  animation: spray 1.5s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 0.7s);
+  -webkit-mask-image: linear-gradient(100deg, #000 40%, transparent 60%);
+  mask-image: linear-gradient(100deg, #000 40%, transparent 60%);
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+}
+
+@keyframes spray {
+  0% {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+    filter: blur(6px);
+    opacity: 0.4;
+  }
+  60% {
+    filter: blur(1.5px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-mask-position: 0% 0;
+    mask-position: 0% 0;
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin-top: 1.1rem;
+}
+
+.act {
+  padding: 0.35rem 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+  text-decoration-color: color-mix(in oklab, var(--gold) 45%, transparent);
+  transition: text-decoration-color 200ms, color 200ms;
+}
+
+.act:hover {
+  text-decoration-color: var(--gold);
+}
+
+.act-quiet {
+  color: var(--bone-dim);
+  text-decoration-color: color-mix(in oklab, var(--bone-dim) 40%, transparent);
+}
+
+/* ── History: older scrawls lower on the wall ────────────── */
+.history {
+  margin-top: 3.4rem;
+}
+
+.history-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.history h2 {
+  margin: 0;
+  font-family: var(--font-spray), sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 7vw, 2.1rem);
+  color: var(--violet);
+}
+
+.history ol {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.history li + li {
+  border-top: 1px dashed color-mix(in oklab, var(--bone-dim) 25%, transparent);
+}
+
+.history li button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.history .h-wish {
+  display: block;
+  font-size: 1rem;
+  color: var(--bone-dim);
+}
+
+.history .h-twist {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--bone);
+}
+
+.history li button:hover .h-twist {
+  color: var(--gold);
+}
+
+.history-empty {
+  margin: 0.6rem 0 0;
+  color: var(--bone-dim);
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.foot {
+  margin-top: 3.6rem;
+  font-size: 0.95rem;
+  color: var(--bone-dim);
+}
+
+.foot p {
+  margin: 0.2rem 0;
+}
+
+.foot .rabta {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-spray), sans-serif;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1.1;
+  color: var(--gold);
+  transform: rotate(-2deg);
+  text-shadow: 0 0 0.4em color-mix(in oklab, var(--gold) 25%, transparent);
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.6rem;
+}
+
+@media (min-width: 720px) {
+  .wall-inner {
+    padding-top: 72px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .wall-inner {
+    width: min(100% - 96px, 78rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 36rem;
+    column-gap: clamp(3rem, 6vw, 7rem);
+    align-items: start;
+    padding-top: 96px;
+  }
+  .wall-inner > * {
+    grid-column: 2;
+  }
+  .wall-inner > header {
+    grid-column: 1;
+    grid-row: 1 / span 6;
+    position: sticky;
+    top: 72px;
+  }
+  .wall-inner > header .title {
+    font-size: clamp(6rem, 10vw, 9rem);
+  }
+  .wall-inner > header .title-row {
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  .wall-inner > header .lamp {
+    width: 150px;
+  }
+  .wall-inner > header .tagline {
+    font-size: 1.7rem;
+    max-width: 18ch;
+  }
+  .panel {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+  .lamp[data-waking="true"] .smoke path {
+    opacity: 0.6;
+  }
+  .spray {
+    animation: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}

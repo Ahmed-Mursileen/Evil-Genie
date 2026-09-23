@@ -1,0 +1,602 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T22:13:37.572Z",
+  "title": "Design System: Evil Genie",
+  "extensions": {
+    "colorMeta": {
+      "night-plaster": {
+        "role": "neutral",
+        "displayName": "Night Plaster",
+        "canonical": "#15101d",
+        "oklch": "oklch(18.6% 0.027 301.5)",
+        "tonalRamp": [
+          "oklch(15% 0.016 301.5)",
+          "oklch(25% 0.016 301.5)",
+          "oklch(36% 0.027 301.5)",
+          "oklch(48% 0.027 301.5)",
+          "oklch(60% 0.027 301.5)",
+          "oklch(72% 0.027 301.5)",
+          "oklch(84% 0.027 301.5)",
+          "oklch(95% 0.016 301.5)"
+        ]
+      },
+      "plaster-bloom": {
+        "role": "neutral",
+        "displayName": "Plaster Bloom",
+        "canonical": "#231a2f",
+        "oklch": "oklch(23.9% 0.041 303.1)",
+        "tonalRamp": [
+          "oklch(15% 0.025 303.1)",
+          "oklch(25% 0.025 303.1)",
+          "oklch(36% 0.041 303.1)",
+          "oklch(48% 0.041 303.1)",
+          "oklch(60% 0.041 303.1)",
+          "oklch(72% 0.041 303.1)",
+          "oklch(84% 0.041 303.1)",
+          "oklch(95% 0.025 303.1)"
+        ]
+      },
+      "crack-black": {
+        "role": "neutral",
+        "displayName": "Crack Black",
+        "canonical": "#08060c",
+        "oklch": "oklch(12.9% 0.015 301.5)",
+        "tonalRamp": [
+          "oklch(15% 0.015 301.5)",
+          "oklch(25% 0.015 301.5)",
+          "oklch(36% 0.015 301.5)",
+          "oklch(48% 0.015 301.5)",
+          "oklch(60% 0.015 301.5)",
+          "oklch(72% 0.015 301.5)",
+          "oklch(84% 0.015 301.5)",
+          "oklch(95% 0.015 301.5)"
+        ]
+      },
+      "marigold-paint": {
+        "role": "primary",
+        "displayName": "Marigold Paint",
+        "canonical": "#f2b632",
+        "oklch": "oklch(81.1% 0.153 82.1)",
+        "tonalRamp": [
+          "oklch(15% 0.084 82.1)",
+          "oklch(25% 0.084 82.1)",
+          "oklch(36% 0.140 82.1)",
+          "oklch(48% 0.140 82.1)",
+          "oklch(60% 0.140 82.1)",
+          "oklch(72% 0.140 82.1)",
+          "oklch(84% 0.140 82.1)",
+          "oklch(95% 0.084 82.1)"
+        ]
+      },
+      "marigold-drop-shade": {
+        "role": "primary",
+        "displayName": "Marigold Drop Shade",
+        "canonical": "#9a6108",
+        "oklch": "oklch(54.3% 0.116 69.2)",
+        "tonalRamp": [
+          "oklch(15% 0.069 69.2)",
+          "oklch(25% 0.069 69.2)",
+          "oklch(36% 0.116 69.2)",
+          "oklch(48% 0.116 69.2)",
+          "oklch(60% 0.116 69.2)",
+          "oklch(72% 0.116 69.2)",
+          "oklch(84% 0.116 69.2)",
+          "oklch(95% 0.069 69.2)"
+        ]
+      },
+      "chalking-violet": {
+        "role": "secondary",
+        "displayName": "Chalking Violet",
+        "canonical": "#a472ff",
+        "oklch": "oklch(66.8% 0.202 297.0)",
+        "tonalRamp": [
+          "oklch(15% 0.084 297.0)",
+          "oklch(25% 0.084 297.0)",
+          "oklch(36% 0.140 297.0)",
+          "oklch(48% 0.140 297.0)",
+          "oklch(60% 0.140 297.0)",
+          "oklch(72% 0.140 297.0)",
+          "oklch(84% 0.140 297.0)",
+          "oklch(95% 0.084 297.0)"
+        ]
+      },
+      "violet-underpaint": {
+        "role": "secondary",
+        "displayName": "Violet Underpaint",
+        "canonical": "#4a2396",
+        "oklch": "oklch(38.5% 0.173 291.5)",
+        "tonalRamp": [
+          "oklch(15% 0.084 291.5)",
+          "oklch(25% 0.084 291.5)",
+          "oklch(36% 0.140 291.5)",
+          "oklch(48% 0.140 291.5)",
+          "oklch(60% 0.140 291.5)",
+          "oklch(72% 0.140 291.5)",
+          "oklch(84% 0.140 291.5)",
+          "oklch(95% 0.084 291.5)"
+        ]
+      },
+      "bone-whitewash": {
+        "role": "neutral",
+        "displayName": "Bone Whitewash",
+        "canonical": "#efe6d8",
+        "oklch": "oklch(92.8% 0.021 79.1)",
+        "tonalRamp": [
+          "oklch(15% 0.013 79.1)",
+          "oklch(25% 0.013 79.1)",
+          "oklch(36% 0.021 79.1)",
+          "oklch(48% 0.021 79.1)",
+          "oklch(60% 0.021 79.1)",
+          "oklch(72% 0.021 79.1)",
+          "oklch(84% 0.021 79.1)",
+          "oklch(95% 0.013 79.1)"
+        ]
+      },
+      "faded-chalk": {
+        "role": "neutral",
+        "displayName": "Faded Chalk",
+        "canonical": "#b8abc9",
+        "oklch": "oklch(76.2% 0.045 305.0)",
+        "tonalRamp": [
+          "oklch(15% 0.027 305.0)",
+          "oklch(25% 0.027 305.0)",
+          "oklch(36% 0.045 305.0)",
+          "oklch(48% 0.045 305.0)",
+          "oklch(60% 0.045 305.0)",
+          "oklch(72% 0.045 305.0)",
+          "oklch(84% 0.045 305.0)",
+          "oklch(95% 0.027 305.0)"
+        ]
+      },
+      "paint-ink": {
+        "role": "neutral",
+        "displayName": "Paint Ink",
+        "canonical": "#1b1024",
+        "oklch": "oklch(19.8% 0.042 308.4)",
+        "tonalRamp": [
+          "oklch(15% 0.025 308.4)",
+          "oklch(25% 0.025 308.4)",
+          "oklch(36% 0.042 308.4)",
+          "oklch(48% 0.042 308.4)",
+          "oklch(60% 0.042 308.4)",
+          "oklch(72% 0.042 308.4)",
+          "oklch(84% 0.042 308.4)",
+          "oklch(95% 0.025 308.4)"
+        ]
+      },
+      "yellow-void": {
+        "role": "tertiary",
+        "displayName": "Yellow Void",
+        "canonical": "#0d0c07",
+        "oklch": "oklch(15.4% 0.011 98.6)",
+        "tonalRamp": [
+          "oklch(15% 0.011 98.6)",
+          "oklch(25% 0.011 98.6)",
+          "oklch(36% 0.011 98.6)",
+          "oklch(48% 0.011 98.6)",
+          "oklch(60% 0.011 98.6)",
+          "oklch(72% 0.011 98.6)",
+          "oklch(84% 0.011 98.6)",
+          "oklch(95% 0.011 98.6)"
+        ]
+      },
+      "yellow-plaster-bloom": {
+        "role": "tertiary",
+        "displayName": "Yellow Plaster Bloom",
+        "canonical": "#1c190b",
+        "oklch": "oklch(21.3% 0.025 97.6)",
+        "tonalRamp": [
+          "oklch(15% 0.015 97.6)",
+          "oklch(25% 0.015 97.6)",
+          "oklch(36% 0.025 97.6)",
+          "oklch(48% 0.025 97.6)",
+          "oklch(60% 0.025 97.6)",
+          "oklch(72% 0.025 97.6)",
+          "oklch(84% 0.025 97.6)",
+          "oklch(95% 0.015 97.6)"
+        ]
+      },
+      "yellow-crack": {
+        "role": "tertiary",
+        "displayName": "Yellow Crack",
+        "canonical": "#000000",
+        "oklch": "oklch(0.0% 0.000 0.0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 0.0)",
+          "oklch(25% 0.000 0.0)",
+          "oklch(36% 0.000 0.0)",
+          "oklch(48% 0.000 0.0)",
+          "oklch(60% 0.000 0.0)",
+          "oklch(72% 0.000 0.0)",
+          "oklch(84% 0.000 0.0)",
+          "oklch(95% 0.000 0.0)"
+        ]
+      },
+      "yellow-pale-gold": {
+        "role": "tertiary",
+        "displayName": "Yellow Pale Gold",
+        "canonical": "#f4e27a",
+        "oklch": "oklch(90.6% 0.127 99.7)",
+        "tonalRamp": [
+          "oklch(15% 0.076 99.7)",
+          "oklch(25% 0.076 99.7)",
+          "oklch(36% 0.127 99.7)",
+          "oklch(48% 0.127 99.7)",
+          "oklch(60% 0.127 99.7)",
+          "oklch(72% 0.127 99.7)",
+          "oklch(84% 0.127 99.7)",
+          "oklch(95% 0.076 99.7)"
+        ]
+      },
+      "yellow-drop-shade": {
+        "role": "tertiary",
+        "displayName": "Yellow Drop Shade",
+        "canonical": "#6b5a06",
+        "oklch": "oklch(47.1% 0.094 95.9)",
+        "tonalRamp": [
+          "oklch(15% 0.057 95.9)",
+          "oklch(25% 0.057 95.9)",
+          "oklch(36% 0.094 95.9)",
+          "oklch(48% 0.094 95.9)",
+          "oklch(60% 0.094 95.9)",
+          "oklch(72% 0.094 95.9)",
+          "oklch(84% 0.094 95.9)",
+          "oklch(95% 0.057 95.9)"
+        ]
+      },
+      "yellow-sign": {
+        "role": "tertiary",
+        "displayName": "Yellow Sign",
+        "canonical": "#e3c62b",
+        "oklch": "oklch(82.7% 0.161 97.6)",
+        "tonalRamp": [
+          "oklch(15% 0.084 97.6)",
+          "oklch(25% 0.084 97.6)",
+          "oklch(36% 0.140 97.6)",
+          "oklch(48% 0.140 97.6)",
+          "oklch(60% 0.140 97.6)",
+          "oklch(72% 0.140 97.6)",
+          "oklch(84% 0.140 97.6)",
+          "oklch(95% 0.084 97.6)"
+        ]
+      },
+      "yellow-underpaint": {
+        "role": "tertiary",
+        "displayName": "Yellow Underpaint",
+        "canonical": "#3d3304",
+        "oklch": "oklch(32.3% 0.063 96.3)",
+        "tonalRamp": [
+          "oklch(15% 0.038 96.3)",
+          "oklch(25% 0.038 96.3)",
+          "oklch(36% 0.063 96.3)",
+          "oklch(48% 0.063 96.3)",
+          "oklch(60% 0.063 96.3)",
+          "oklch(72% 0.063 96.3)",
+          "oklch(84% 0.063 96.3)",
+          "oklch(95% 0.038 96.3)"
+        ]
+      },
+      "yellow-bone": {
+        "role": "tertiary",
+        "displayName": "Yellow Bone",
+        "canonical": "#efe8c4",
+        "oklch": "oklch(92.7% 0.048 98.1)",
+        "tonalRamp": [
+          "oklch(15% 0.029 98.1)",
+          "oklch(25% 0.029 98.1)",
+          "oklch(36% 0.048 98.1)",
+          "oklch(48% 0.048 98.1)",
+          "oklch(60% 0.048 98.1)",
+          "oklch(72% 0.048 98.1)",
+          "oklch(84% 0.048 98.1)",
+          "oklch(95% 0.029 98.1)"
+        ]
+      },
+      "yellow-faded-chalk": {
+        "role": "tertiary",
+        "displayName": "Yellow Faded Chalk",
+        "canonical": "#b9ae76",
+        "oklch": "oklch(74.7% 0.076 98.4)",
+        "tonalRamp": [
+          "oklch(15% 0.045 98.4)",
+          "oklch(25% 0.045 98.4)",
+          "oklch(36% 0.076 98.4)",
+          "oklch(48% 0.076 98.4)",
+          "oklch(60% 0.076 98.4)",
+          "oklch(72% 0.076 98.4)",
+          "oklch(84% 0.076 98.4)",
+          "oklch(95% 0.045 98.4)"
+        ]
+      },
+      "yellow-ink": {
+        "role": "tertiary",
+        "displayName": "Yellow Ink",
+        "canonical": "#141203",
+        "oklch": "oklch(18.0% 0.030 102.8)",
+        "tonalRamp": [
+          "oklch(15% 0.018 102.8)",
+          "oklch(25% 0.018 102.8)",
+          "oklch(36% 0.030 102.8)",
+          "oklch(48% 0.030 102.8)",
+          "oklch(60% 0.030 102.8)",
+          "oklch(72% 0.030 102.8)",
+          "oklch(84% 0.030 102.8)",
+          "oklch(95% 0.018 102.8)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The 'Evil Genie' title only, violet spray with a marigold drop shade."
+      },
+      "display-wide": {
+        "displayName": "Display (wide)",
+        "purpose": "Title size in the sticky desktop masthead at 1000px and up."
+      },
+      "headline": {
+        "displayName": "Stamp",
+        "purpose": "Verdict stamp (Manzoor., Nahi., Mit gaya.), rotated -3deg."
+      },
+      "title": {
+        "displayName": "Wall Heading",
+        "purpose": "Spray section headings and the footer sign-off."
+      },
+      "urdu": {
+        "displayName": "Urdu Promise",
+        "purpose": "The Nastaliq line ہر مراد پوری above the title, marigold, rtl."
+      },
+      "twist": {
+        "displayName": "Twist",
+        "purpose": "The product: the genie's verdict in bone, max 30ch."
+      },
+      "wish-input": {
+        "displayName": "Wish Input",
+        "purpose": "Text the visitor writes on the whitewash panel."
+      },
+      "tagline": {
+        "displayName": "Tagline",
+        "purpose": "Uppercase painted slogan under the title."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default wall text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels, legend, mood chips, text actions."
+      },
+      "summon": {
+        "displayName": "Summon",
+        "purpose": "Uppercase tracked label on the paint-block action."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Counter row with tabular numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "drop-shade",
+        "value": "0.045em 0.05em 0 var(--gold-deep), 0 0 0.18em color-mix(in oklab, var(--violet) 45%, transparent), 0 0 0.6em color-mix(in oklab, var(--violet) 22%, transparent)",
+        "purpose": "text-shadow on the display title: sign-painter's drop shade plus violet overspray."
+      },
+      {
+        "name": "overspray-gold",
+        "value": "0 0 0.3em color-mix(in oklab, var(--gold) 30%, transparent)",
+        "purpose": "text-shadow halo on sprayed gold words (stamp; Urdu line 35%/10px; sign-off 25%/0.4em)."
+      },
+      {
+        "name": "fine-print-bleed",
+        "value": "0 0 0.5em color-mix(in oklab, var(--bone) 16%, transparent)",
+        "purpose": "text-shadow bleed on the twist."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid var(--gold); outline-offset: 3px",
+        "purpose": "Global :focus-visible (2px offset on mood chips)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing curve; all transitions and the spray reveal."
+      },
+      {
+        "name": "spray-reveal",
+        "value": "1.5s ease-out, 0.7s stagger per sentence; masked 100deg sweep, blur 6px to 0, opacity 0.4 to 1",
+        "purpose": "Twist sprays onto the wall line by line."
+      },
+      {
+        "name": "lamp-rattle",
+        "value": "180ms steps(2) infinite",
+        "purpose": "Lamp body shakes while loading."
+      },
+      {
+        "name": "lamp-smoke",
+        "value": "1.8s ease-out infinite, 0.6s offsets",
+        "purpose": "Smoke strokes rise from the lamp while loading."
+      },
+      {
+        "name": "mood-fill",
+        "value": "350ms ease-out scaleX 0 to 1 from left",
+        "purpose": "Violet paint fills the selected mood chip."
+      },
+      {
+        "name": "paint-swell",
+        "value": "250ms ease-out",
+        "purpose": "Summon block hover/press scale."
+      },
+      {
+        "name": "wall-repaint",
+        "value": "900ms ease-out",
+        "purpose": "Wall and whitewash colour change (yellow mood, panel focus)."
+      },
+      {
+        "name": "text-state",
+        "value": "200ms",
+        "purpose": "Colour and underline changes on text actions and chips."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animations and transitions 1ms; spray mask removed; smoke static at 0.6",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "720px"
+      },
+      {
+        "name": "desktop",
+        "value": "1000px"
+      }
+    ],
+    "textures": [
+      {
+        "name": "rough",
+        "value": "SVG feTurbulence fractalNoise baseFrequency 0.035 0.09, feDisplacementMap scale 7",
+        "purpose": "Rough edges on paint fills."
+      },
+      {
+        "name": "rough-sm",
+        "value": "feTurbulence baseFrequency 0.12, feDisplacementMap scale 2.5",
+        "purpose": "Chalk underlines and the lamp."
+      },
+      {
+        "name": "brush / brush-soft",
+        "value": "fractal-noise alpha masks (baseFrequency .02)",
+        "purpose": "Patchy coverage on summon block and whitewash."
+      },
+      {
+        "name": "drips",
+        "value": "1200x44px strip of 12 tapered drips",
+        "purpose": "Paint drips under the summon block."
+      },
+      {
+        "name": "stains / washed / noise",
+        "value": "fractal-noise masks at 1600px, 800x200 and 240px",
+        "purpose": "Damp stains, washed-off ghost chalkings, plaster grain."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Summon Paint Block",
+      "kind": "button",
+      "refersTo": "button-summon",
+      "description": "The single full-width primary action: a rough marigold paint block with drips.",
+      "html": "<div class=\"ds-wall\"><svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"rough\" x=\"-4%\" y=\"-12%\" width=\"108%\" height=\"124%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035 0.09\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"7\"/></filter><filter id=\"rough-sm\" x=\"-10%\" y=\"-10%\" width=\"120%\" height=\"120%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.12\" numOctaves=\"2\" seed=\"3\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.5\"/></filter></svg><button class=\"ds-summon\">Murad maango</button></div>",
+      "css": ".ds-wall{--wall:#15101d;--gold:#f2b632;--gold-deep:#9a6108;--violet:#a472ff;--violet-deep:#4a2396;--bone:#efe6d8;--bone-dim:#b8abc9;--ink:#1b1024;--ease-out:cubic-bezier(0.16,1,0.3,1);background:var(--wall);color:var(--bone);font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:500;padding:24px;} .ds-summon{position:relative;isolation:isolate;display:block;width:100%;padding:0.95rem 1rem;border:0;background:none;cursor:pointer;font:inherit;font-size:clamp(1.5rem,6vw,1.85rem);font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);} .ds-summon::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--gold);filter:url(#rough);transition:transform 250ms var(--ease-out);} .ds-summon::after{content:'';position:absolute;left:0;right:0;top:calc(100% - 2px);height:44px;z-index:-1;background:var(--gold);-webkit-mask-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='44'%3E%3Cg fill='%23000'%3E%3Cpath d='M38 0h9l-1.8 17a2.7 2.7 0 0 1-5.4 0z'/%3E%3Cpath d='M233 0h11l-2.2 31a3.3 3.3 0 0 1-6.6 0z'/%3E%3Cpath d='M502 0h8l-1.6 22a2.4 2.4 0 0 1-4.8 0z'/%3E%3Cpath d='M705 0h12l-2.4 38a3.6 3.6 0 0 1-7.2 0z'/%3E%3C/g%3E%3C/svg%3E\");mask-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='44'%3E%3Cg fill='%23000'%3E%3Cpath d='M38 0h9l-1.8 17a2.7 2.7 0 0 1-5.4 0z'/%3E%3Cpath d='M233 0h11l-2.2 31a3.3 3.3 0 0 1-6.6 0z'/%3E%3Cpath d='M502 0h8l-1.6 22a2.4 2.4 0 0 1-4.8 0z'/%3E%3Cpath d='M705 0h12l-2.4 38a3.6 3.6 0 0 1-7.2 0z'/%3E%3C/g%3E%3C/svg%3E\");-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:1200px 44px;mask-size:1200px 44px;pointer-events:none;} .ds-summon:hover::before{transform:scale(1.015,1.06);} .ds-summon:active::before{transform:scale(0.99);} .ds-summon:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}"
+    },
+    {
+      "name": "Summon Paint Block (loading)",
+      "kind": "button",
+      "refersTo": "button-summon-disabled",
+      "description": "Disabled while the genie wakes: paint mixed 55% into the wall.",
+      "html": "<div class=\"ds-wall\"><svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"rough\" x=\"-4%\" y=\"-12%\" width=\"108%\" height=\"124%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035 0.09\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"7\"/></filter><filter id=\"rough-sm\" x=\"-10%\" y=\"-10%\" width=\"120%\" height=\"120%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.12\" numOctaves=\"2\" seed=\"3\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.5\"/></filter></svg><button class=\"ds-summon-off\" disabled>Jaag raha hai…</button></div>",
+      "css": ".ds-wall{--wall:#15101d;--gold:#f2b632;--gold-deep:#9a6108;--violet:#a472ff;--violet-deep:#4a2396;--bone:#efe6d8;--bone-dim:#b8abc9;--ink:#1b1024;--ease-out:cubic-bezier(0.16,1,0.3,1);background:var(--wall);color:var(--bone);font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:500;padding:24px;} .ds-summon-off{position:relative;isolation:isolate;display:block;width:100%;padding:0.95rem 1rem;border:0;background:none;cursor:progress;font:inherit;font-size:clamp(1.5rem,6vw,1.85rem);font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);} .ds-summon-off::before{content:'';position:absolute;inset:0;z-index:-1;background:color-mix(in oklab,var(--gold) 55%,var(--wall));filter:url(#rough);}"
+    },
+    {
+      "name": "Text Action",
+      "kind": "button",
+      "refersTo": "text-action",
+      "description": "Painted words with a chalk underline for secondary actions; quiet variant in faded chalk.",
+      "html": "<div class=\"ds-wall\"><button class=\"ds-act\">Copy karo</button> <button class=\"ds-act\">Share karo</button> <button class=\"ds-act ds-act-quiet\">Aur maango</button></div>",
+      "css": ".ds-wall{--wall:#15101d;--gold:#f2b632;--gold-deep:#9a6108;--violet:#a472ff;--violet-deep:#4a2396;--bone:#efe6d8;--bone-dim:#b8abc9;--ink:#1b1024;--ease-out:cubic-bezier(0.16,1,0.3,1);background:var(--wall);color:var(--bone);font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:500;padding:24px;} .ds-act{margin-right:1.4rem;padding:0.35rem 0;border:0;background:none;cursor:pointer;font:inherit;font-size:1.2rem;font-weight:700;color:var(--gold);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:0.3em;text-decoration-color:color-mix(in oklab,var(--gold) 45%,transparent);transition:text-decoration-color 200ms,color 200ms;} .ds-act:hover{text-decoration-color:var(--gold);} .ds-act:focus-visible{outline:3px solid var(--gold);outline-offset:3px;} .ds-act-quiet{color:var(--bone-dim);text-decoration-color:color-mix(in oklab,var(--bone-dim) 40%,transparent);}"
+    },
+    {
+      "name": "Wish Panel",
+      "kind": "input",
+      "refersTo": "wish-panel",
+      "description": "Borderless textarea on a rough bone whitewash patch; warms toward marigold on focus.",
+      "html": "<div class=\"ds-wall\"><svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"rough\" x=\"-4%\" y=\"-12%\" width=\"108%\" height=\"124%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035 0.09\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"7\"/></filter><filter id=\"rough-sm\" x=\"-10%\" y=\"-10%\" width=\"120%\" height=\"120%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.12\" numOctaves=\"2\" seed=\"3\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.5\"/></filter></svg><div class=\"ds-panel\"><div class=\"ds-wash\"></div><label class=\"ds-wlabel\" for=\"ds-w\">Apni khwahish likho</label><textarea id=\"ds-w\" class=\"ds-winput\" rows=\"3\" placeholder=\"Mujhe 100 ton sona chahiye…\"></textarea><div class=\"ds-wmeta\"><span>Enter to summon</span><span>0/200</span></div></div></div>",
+      "css": ".ds-wall{--wall:#15101d;--gold:#f2b632;--gold-deep:#9a6108;--violet:#a472ff;--violet-deep:#4a2396;--bone:#efe6d8;--bone-dim:#b8abc9;--ink:#1b1024;--ease-out:cubic-bezier(0.16,1,0.3,1);background:var(--wall);color:var(--bone);font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:500;padding:24px;} .ds-panel{position:relative;isolation:isolate;} .ds-wash{position:absolute;inset:0;z-index:-1;background:var(--bone);filter:url(#rough);transition:background-color 900ms var(--ease-out);} .ds-panel:focus-within .ds-wash{background:color-mix(in oklab,var(--bone) 92%,var(--gold));} .ds-wlabel{display:block;padding:0.8rem 1rem 0;font-size:1.1rem;font-weight:700;color:var(--violet-deep);} .ds-winput{display:block;width:100%;min-height:5.6rem;resize:none;border:0;background:transparent;padding:0.25rem 1rem 0.2rem;font:inherit;font-size:clamp(1.35rem,5.4vw,1.6rem);font-weight:600;line-height:1.2;color:var(--ink);caret-color:var(--violet-deep);} .ds-winput:focus-visible{outline:none;} .ds-winput::placeholder{color:color-mix(in oklab,var(--ink) 55%,var(--bone));} .ds-wmeta{display:flex;justify-content:space-between;padding:0 1rem 0.7rem;font-size:0.9rem;font-weight:600;font-variant-numeric:tabular-nums;color:color-mix(in oklab,var(--ink) 70%,var(--bone));}"
+    },
+    {
+      "name": "Mood Chalk Labels",
+      "kind": "chip",
+      "refersTo": "mood-chip",
+      "description": "Radio chips as chalk-underlined words; the selected one is painted violet from the left.",
+      "html": "<div class=\"ds-wall\"><svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"rough\" x=\"-4%\" y=\"-12%\" width=\"108%\" height=\"124%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035 0.09\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"7\"/></filter><filter id=\"rough-sm\" x=\"-10%\" y=\"-10%\" width=\"120%\" height=\"120%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.12\" numOctaves=\"2\" seed=\"3\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.5\"/></filter></svg><div class=\"ds-moods\"><label class=\"ds-mood\"><input type=\"radio\" name=\"dsm\"><span>Classic Evil</span></label><label class=\"ds-mood\"><input type=\"radio\" name=\"dsm\" checked><span>Petty</span></label><label class=\"ds-mood\"><input type=\"radio\" name=\"dsm\"><span>The King in Yellow</span></label></div></div>",
+      "css": ".ds-wall{--wall:#15101d;--gold:#f2b632;--gold-deep:#9a6108;--violet:#a472ff;--violet-deep:#4a2396;--bone:#efe6d8;--bone-dim:#b8abc9;--ink:#1b1024;--ease-out:cubic-bezier(0.16,1,0.3,1);background:var(--wall);color:var(--bone);font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:500;padding:24px;} .ds-moods{display:flex;flex-wrap:wrap;gap:0.35rem 0.5rem;} .ds-mood{position:relative;cursor:pointer;} .ds-mood input{position:absolute;opacity:0;pointer-events:none;} .ds-mood span{position:relative;display:inline-block;padding:0.3rem 0.6rem;font-size:1.1rem;font-weight:600;color:var(--bone);transition:color 200ms var(--ease-out);} .ds-mood span::before{content:'';position:absolute;left:0.45rem;right:0.45rem;bottom:0.2rem;height:2px;background:var(--bone-dim);opacity:0.45;filter:url(#rough-sm);} .ds-mood span::after{content:'';position:absolute;inset:0;z-index:-1;background:var(--violet);filter:url(#rough);transform:scaleX(0);transform-origin:left;transition:transform 350ms var(--ease-out);} .ds-mood:hover span{color:var(--gold);} .ds-mood input:checked+span{color:var(--ink);} .ds-mood input:checked+span::before{opacity:0;} .ds-mood input:checked+span::after{transform:scaleX(1);} .ds-mood input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px;}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "display",
+      "description": "The wall's permanent sign: Nastaliq promise, violet spray title with drop shade, uppercase tagline.",
+      "html": "<div class=\"ds-wall\"><p class=\"ds-urdu\" lang=\"ur\">ہر مراد پوری</p><h1 class=\"ds-title\">Evil Genie</h1><p class=\"ds-tag\">Har murad poori. <em>Qeemat baad mein.</em></p></div>",
+      "css": ".ds-wall{--wall:#15101d;--gold:#f2b632;--gold-deep:#9a6108;--violet:#a472ff;--violet-deep:#4a2396;--bone:#efe6d8;--bone-dim:#b8abc9;--ink:#1b1024;--ease-out:cubic-bezier(0.16,1,0.3,1);background:var(--wall);color:var(--bone);font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:500;padding:24px;} .ds-urdu{margin:0;direction:rtl;font-family:'Noto Nastaliq Urdu',serif;font-weight:700;font-size:clamp(1.5rem,6vw,2rem);line-height:2.2;color:var(--gold);text-shadow:0 0 10px color-mix(in oklab,var(--gold) 35%,transparent);} .ds-title{margin:0;font-family:'Rubik Spray Paint','Barlow Condensed',sans-serif;font-weight:400;font-size:clamp(3.4rem,17vw,6rem);line-height:0.88;letter-spacing:-0.01em;color:var(--violet);text-shadow:0.045em 0.05em 0 var(--gold-deep),0 0 0.18em color-mix(in oklab,var(--violet) 45%,transparent),0 0 0.6em color-mix(in oklab,var(--violet) 22%,transparent);} .ds-tag{margin:0.9rem 0 0;font-size:clamp(1.15rem,4.6vw,1.4rem);font-weight:600;letter-spacing:0.02em;text-transform:uppercase;color:var(--bone);} .ds-tag em{font-style:normal;color:var(--gold);}"
+    },
+    {
+      "name": "Verdict",
+      "kind": "custom",
+      "refersTo": "twist-line",
+      "description": "Tilted spray stamp over the twist, which sprays on sentence by sentence.",
+      "html": "<div class=\"ds-wall\"><h2 class=\"ds-stamp\">Manzoor.</h2><p class=\"ds-twist\"><span class=\"ds-spray\">You have it now, frozen at 1% battery, forever, </span><span class=\"ds-spray\" style=\"--i:1\">with the wifi on one bar.</span></p><p class=\"ds-vwish\">Khwahish thi: <q>I want everyone to like me</q></p></div>",
+      "css": ".ds-wall{--wall:#15101d;--gold:#f2b632;--gold-deep:#9a6108;--violet:#a472ff;--violet-deep:#4a2396;--bone:#efe6d8;--bone-dim:#b8abc9;--ink:#1b1024;--ease-out:cubic-bezier(0.16,1,0.3,1);background:var(--wall);color:var(--bone);font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:500;padding:24px;} .ds-stamp{display:inline-block;margin:0 0 0.35rem;font-family:'Rubik Spray Paint',sans-serif;font-weight:400;font-size:clamp(2.2rem,10vw,3.2rem);line-height:1;color:var(--gold);transform:rotate(-3deg);text-shadow:0 0 0.3em color-mix(in oklab,var(--gold) 30%,transparent);} .ds-twist{margin:0;max-width:30ch;font-size:clamp(1.55rem,6.2vw,2.15rem);font-weight:600;line-height:1.16;color:var(--bone);text-wrap:pretty;text-shadow:0 0 0.5em color-mix(in oklab,var(--bone) 16%,transparent);} .ds-spray{animation:ds-spray 1.5s var(--ease-out) both;animation-delay:calc(var(--i,0) * 0.7s);-webkit-mask-image:linear-gradient(100deg,#000 40%,transparent 60%);mask-image:linear-gradient(100deg,#000 40%,transparent 60%);-webkit-mask-size:260% 100%;mask-size:260% 100%;} @keyframes ds-spray{0%{-webkit-mask-position:100% 0;mask-position:100% 0;filter:blur(6px);opacity:0.4;}60%{filter:blur(1.5px);opacity:1;}100%{-webkit-mask-position:0% 0;mask-position:0% 0;filter:blur(0);opacity:1;}} @media (prefers-reduced-motion:reduce){.ds-spray{animation:none;-webkit-mask-image:none;mask-image:none;}} .ds-vwish{margin:0.9rem 0 0;font-size:1.1rem;color:var(--bone-dim);} .ds-vwish q{color:var(--bone);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Amil Baba's Wall at Night",
+    "overview": "Every surface is one stretch of cracked, damp plaster after dark, painted by a street sign-painter who advertises a baba who fixes everything. The wall promises in gold and violet; the genie's verdict is sprayed underneath in bone whitewash, like fine print. Nothing floats above the wall: panels are whitewash brushed onto it, buttons are blocks of paint that drip, choices are chalk underlines, headings are spray lettering. Rough edges come from displacement filters and noise masks, never from rounded corners or card borders.\n\nDensity is a single narrow column of painted notices on a phone (40rem max), widening on desktop into a two-column wall where the masthead stays pinned on the left like a permanent sign and the working notices run down the right. The mood is dread with a straight face: the wall is dim, the paint is loud, and the twist is the biggest body-type on the page. Old chalkings, half washed off, sit behind everything at 7–8% opacity so the wall always feels used.\n\nThe King in Yellow mood repaints the same wall rather than swapping the layout: every token is redefined on `[data-mood=\"yellow\"]` to black plaster and sick yellow paint, with a 900ms repaint. The rejected category default is the glowing lamp on a purple-gradient card.",
+    "keyCharacteristics": [
+      "One wall, painted: night plaster ground, marigold and violet paint, bone whitewash for fine print.",
+      "Spray-paint display lettering, condensed painted body, Nastaliq for the Urdu promise.",
+      "Zero border-radius anywhere; roughness comes from SVG turbulence displacement and noise masks.",
+      "Paint-native depth only: drop shade and overspray halo on lettering, no UI shadows.",
+      "Motion is physical: spray sweep reveal, lamp rattle and smoke, paint filling a chalk label.",
+      "A mood can repaint the whole wall by redefining tokens, never by changing structure."
+    ],
+    "rules": [
+      {
+        "name": "The Paint, Not Pixels Rule",
+        "body": "Every colour sits on the wall as paint. Tints and disabled states are `color-mix(in oklab, …)` of existing tokens (gold 55% into wall for disabled, bone 92% into gold for a focused panel), never new hues.",
+        "section": "colors"
+      },
+      {
+        "name": "The Repaint Rule",
+        "body": "A mood changes the wall by redefining the same custom properties on `[data-mood]`. Components reference `var(--gold)`, `var(--violet)` and friends, never literal hex, so one attribute repaints everything.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fine Print Rule",
+        "body": "The twist is always bone whitewash (or marigold when it is a safety refusal), never violet. Measured contrast holds in both palettes: bone on wall 15.1:1 (yellow 15.9:1), faded chalk on wall 8.6:1, ink on marigold 10.0:1, ink on violet fill 5.6:1 (yellow 11.1:1).",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Hands Rule",
+        "body": "Spray lettering is for signs (title, stamp, section heads, sign-off, ghost chalkings); everything a visitor reads for meaning is Barlow Condensed. Never set the twist or a control in the spray face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Uppercase Is Paint Rule",
+        "body": "Uppercase with tracking belongs only to painted-on slogans: the tagline and the summon block.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paint-Native Depth Rule",
+        "body": "A shadow is allowed only if paint on a wall could make it: a drop shade on lettering or a spray halo. No box-shadows, no floating cards, no blur backdrops.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** reference colours through the custom properties on `:root` so `[data-mood=\"yellow\"]` can repaint the whole wall.",
+      "**Do** make every fill a rough paint shape: SVG displacement (`#rough`, `#rough-sm`) plus a noise brush mask, 0px radius.",
+      "**Do** keep the twist in bone Barlow Condensed at clamp(1.55rem, 6.2vw, 2.15rem), max 30ch, the largest reading type on the page.",
+      "**Do** keep a single full-width marigold paint block as the only primary action on a surface.",
+      "**Do** mark focus with the 3px marigold outline at 3px offset.",
+      "**Do** honour `prefers-reduced-motion`: animations collapse to 1ms, the spray mask is removed, smoke shows statically."
+    ],
+    "donts": [
+      "**Don't** use rounded pills, bordered cards, or box-shadows; controls are painted blocks and chalk underlines.",
+      "**Don't** put the lamp on a glowing purple-gradient card; that is the category default this world refuses.",
+      "**Don't** set body copy, the twist, or controls in Rubik Spray Paint.",
+      "**Don't** introduce new hues for states; mix existing tokens in oklab.",
+      "**Don't** let decorative layers (cracks, ghost chalkings, stains) take pointer events or layout space."
+    ]
+  }
+}

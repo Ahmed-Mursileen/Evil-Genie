@@ -1,12 +1,12 @@
 import { cookies } from "next/headers";
 import { after } from "next/server";
-import { twistWish } from "@/lib/deepseek";
+import { describeError, twistWish } from "@/lib/deepseek";
 import { MOODS, WISH_MAX, WISH_MIN, isMood, type ConcreteMood } from "@/lib/moods";
 import { WISHES_PER_DAY, checkQuota, consumeQuota } from "@/lib/ratelimit";
 import { SELF_HARM_RESPONSE, isSelfHarmWish } from "@/lib/safety";
 import { logWish } from "@/lib/wishlog";
 
-export const maxDuration = 30;
+export const maxDuration = 60;
 
 const CONCRETE = MOODS.map((m) => m.id).filter((id): id is ConcreteMood => id !== "random");
 const VISITOR_COOKIE = "eg_vid";
@@ -80,7 +80,7 @@ export async function POST(req: Request) {
   try {
     twist = await twistWish(wish, mood);
   } catch (err) {
-    console.error("twist failed", err);
+    console.error(`deepseek failed (model ${process.env.DEEPSEEK_MODEL || "deepseek-chat"}) ${describeError(err)}`);
     after(() => logWish({ wish, mood, twist: null, flagged: false }));
     return fail(502, "Woh so gaya. Something older than time is not answering. Try again.", {
       remaining: quota.remaining,

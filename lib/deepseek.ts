@@ -8,7 +8,7 @@ let client: OpenAI | null = null;
 function getClient(): OpenAI | null {
   const apiKey = process.env.DEEPSEEK_API_KEY;
   if (!apiKey) return null;
-  client ??= new OpenAI({ apiKey, baseURL: "https://api.deepseek.com", timeout: 25_000, maxRetries: 1 });
+  client ??= new OpenAI({ apiKey, baseURL: "https://api.deepseek.com", timeout: 40_000, maxRetries: 0 });
   return client;
 }
 
@@ -31,10 +31,21 @@ export async function twistWish(wish: string, mood: ConcreteMood): Promise<strin
     messages: buildMessages(wish, mood),
     temperature: 1.3,
     max_tokens: 160,
+    // V4 models reason before answering by default; that eats the whole token
+    // budget (empty reply) and ignores temperature. A twist needs no reasoning.
+    // @ts-expect-error DeepSeek-specific parameter, passed through as-is.
+    thinking: { type: "disabled" },
   });
-  const text = cleanTwist(res.choices[0]?.message?.content ?? "");
-  if (!text) throw new Error("empty completion");
+  const choice = res.choices[0];
+  const text = cleanTwist(choice?.message?.content ?? "");
+  if (!text) throw new Error(`empty completion (finish_reason: ${choice?.finish_reason ?? "none"})`);
   return text;
+}
+
+/** One readable line for the server logs: HTTP status plus DeepSeek's message. */
+export function describeError(err: unknown): string {
+  if (err instanceof OpenAI.APIError) return `status ${err.status ?? "?"}: ${err.message}`;
+  return err instanceof Error ? `${err.name}: ${err.message}` : String(err);
 }
 
 export const isMockMode = () => !process.env.DEEPSEEK_API_KEY;
